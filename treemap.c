@@ -78,22 +78,13 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
     if (tree == NULL || tree->root == NULL) return NULL;
     TreeNode * current = tree->root;
-    Pair *pair = current->pair;
 
     while(current != NULL){
+        Pair *pair = current->pair;
         
-        if(tree->lower_than(key,pair->key)){
-            current = current->left;
-            pair = current->pair;
-        }
-        if(tree->lower_than(pair->key,key)){
-            current = current->right;
-            pair = current->pair;
-        }
-        else{
-            tree->current = current;
-            return current->pair;
-        }
+        if(tree->lower_than(key,pair->key)){current = current->left;  
+        if(tree->lower_than(pair->key,key)) current = current->right;
+        else return pair;
     }
     return NULL;
 }
