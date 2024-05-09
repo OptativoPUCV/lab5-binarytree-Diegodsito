@@ -19,3 +19,18 @@ treemap.c:97:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 520e1cf
+Thu 09 May 2024 06:54:27 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:93:11: error: expected ‘(’ before ‘{’ token
+   93 |         if{
+      |           ^
+      |           (
+treemap.c:98:1: error: control reaches end of non-void function [-Werror=return-type]
+   98 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+103cfab
