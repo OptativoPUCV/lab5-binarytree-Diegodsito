@@ -193,6 +193,6 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current = minimum(current->right);
         return tree->current->pair;
     }
-
     
+ return NULL;   
 }
