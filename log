@@ -195,3 +195,14 @@ Fri 10 May 2024 10:08:44 PM UTC:
  tests:  23|2
 total_score: 50/70
 282bca2
+Fri 10 May 2024 10:11:55 PM UTC: 
+ treemap.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:185:1: error: control reaches end of non-void function [-Werror=return-type]
+  185 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+7a0321e
