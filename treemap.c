@@ -179,13 +179,14 @@ Pair * upperBound(TreeMap * tree, void* key) {
         Pair *pair = current->pair;
         
         if(is_equal(tree, current->pair, key)) return pair;
-        else if(tree->lower_than(key,pair->key)){
+        else if(tree->lower_than(pair->key,key)){
+            current = current->right;
+        }
+        else{
             ub_node = current;
             current = current->left;
         }
-        else current = current->right;
     }
-    
     if(ub_node != NULL) return ub_node->pair;
     else return NULL;
 }
