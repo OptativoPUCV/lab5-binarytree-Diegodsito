@@ -190,16 +190,13 @@ Pair * nextTreeMap(TreeMap * tree) {
 
     TreeNode *current = tree->current;
     
-    if(current->right != NULL){
-        tree->current = minimum(current->right);
-        return tree->current->pair;
+    if(current->right != NULL && current == current->parent->right){
+        current = current->parent;
     }
 
-    while(current->parent != NULL){
-        current = current->parent;
-        if(current->right == NULL) break;
-        tree->current = minimum(current->right);
-        return tree->current->pair;
-    }
-    return NULL;   
+    if (current->parent == NULL) return NULL;
+    
+    tree->current = current->parent;   
+    
+    return tree->current->pair;   
 }
