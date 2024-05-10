@@ -171,9 +171,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
     if(tree == NULL) return NULL;
-
+    
+    tree->current = NULL;
     TreeNode *current = tree->root;
-
+    
+    
     while(current != NULL){
         Pair *pair = current->pair;
         
